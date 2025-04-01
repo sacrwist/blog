@@ -1,13 +1,20 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:@typescript-eslint/recommended", "prettier"],
+  "extends": [
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint" // plugin が必要 (next/core-web-vitals に含まれる場合もあるが明示)
   ],
   "rules": {
-    "@typescript-eslint/no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }], // 未使用変数は警告。ただし `_` で始まる引数は無視
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_" }
+    ], // 未使用変数は警告。ただし `_` で始まる引数は無視
     "@typescript-eslint/no-explicit-any": "warn", // 'any' 型の使用は警告（エラーにする場合は "error"）
     "react/prop-types": "off", // TypeScript なので PropTypes は不要
-    "react/react-in-jsx-scope": "off", // Next.js や React 17+ では不要
+    "react/react-in-jsx-scope": "off" // Next.js や React 17+ では不要
   }
 }
