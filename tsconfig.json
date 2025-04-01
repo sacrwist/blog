@@ -12,6 +12,12 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    // --- 追加を推奨する厳格なルール ---
+    "target": "es2017", // 出力するJavaScriptのバージョンを指定。es5より新しく、多くのブラウザでサポートされているes2017あたりがバランスが良い場合が多い (Next.jsのデフォルトに近い)
+    "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を区別する（OS間の互換性）
+    "noUnusedLocals": true, // 未使用のローカル変数をエラーにする
+    "noUnusedParameters": true, // 未使用の関数パラメータをエラーにする
+    "noImplicitReturns": true, // 関数内で全てのパスが値を返すことを強制する
     "plugins": [
       {
         "name": "next"
