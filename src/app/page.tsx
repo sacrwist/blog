@@ -1,18 +1,24 @@
-import { Header } from '@/features/common/components/Header';
+import { getArticles } from '@/features/articles/api/common';
+import { ArticleCard } from '@/features/articles/components/ArticleCard';
 
-export default function Home() {
+export default async function Home() {
+  const articles = await getArticles();
+  console.log(articles);
+
   return (
-    <div className="grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 font-[family-name:var(--font-geist-sans)] sm:p-20">
-      <Header />
-      <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        Next
+    <div className="flex min-h-screen flex-col">
+      <main className="flex flex-grow flex-col items-center gap-8 pt-8">
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-3 gap-x-8 gap-y-12">
+            {articles.map(() => {
+              return <ArticleCard />;
+            })}
+          </div>
+        </div>
       </main>
 
-      <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
+      <footer className="flex flex-wrap items-center justify-center gap-6 py-6">
         Footer
-        <button className="2" form="" datatype="" lang="">
-          ボタン
-        </button>
       </footer>
     </div>
   );
