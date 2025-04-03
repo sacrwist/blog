@@ -10,3 +10,15 @@ export const getArticles = async () => {
     console.error(e);
   }
 };
+
+export const getArticle = async (id: string) => {
+  try {
+    const res = await client.get({
+      endpoint: `articles`,
+      contentId: id,
+    });
+    return res;
+  } catch (e) {
+    console.error(e);
+  }
+};
