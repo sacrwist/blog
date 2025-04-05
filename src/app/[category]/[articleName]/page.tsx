@@ -2,7 +2,14 @@ import { getArticle } from '@/features/articles/api/common';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default async function ArticleDetail({ params }) {
+export default async function ArticleDetail({
+  params,
+}: {
+  params: {
+    category: string;
+    articleName: string;
+  };
+}) {
   const article = await getArticle(params.articleName);
 
   return (
@@ -55,7 +62,7 @@ export default async function ArticleDetail({ params }) {
           )}
 
           <div
-            className="prose lg:prose-xl max-w-none"
+            className="prose max-w-none lg:prose-xl"
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
         </div>

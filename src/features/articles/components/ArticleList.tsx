@@ -26,7 +26,6 @@ interface ArticleListProps {
 }
 
 export const ArticleList = (props: ArticleListProps) => {
-  console.log(props.articles);
   return (
     <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2">
       {props.articles.map((article) => {
