@@ -2,7 +2,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 interface ArticleCardProps {
-  article: any;
+  article: {
+    id: string;
+    createdAt: string;
+    updatedAt: string;
+    publishedAt: string;
+    revisedAt: string;
+    title: string;
+    content: string;
+    eyecatch: {
+      url: string;
+      height: number;
+      width: number;
+    };
+    category: {
+      id: string;
+      createdAt: string;
+      updatedAt: string;
+      publishedAt: string;
+      revisedAt: string;
+      name: string;
+    };
+  };
 }
 
 export const ArticleCard = (props: ArticleCardProps) => {
@@ -12,7 +33,7 @@ export const ArticleCard = (props: ArticleCardProps) => {
         <Image
           alt=""
           src={props.article.eyecatch.url}
-          className="h-56 w-full object-cover"
+          className="h-56 w-full object-cover md:h-72"
           width={props.article.eyecatch.width}
           height={props.article.eyecatch.height}
         />
