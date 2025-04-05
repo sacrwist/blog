@@ -51,7 +51,7 @@ export const Header = () => {
         <Tabs value={activeTabValue} defaultValue="all" className="w-full">
           <TabsList className="inline-flex h-auto rounded-none border-none bg-transparent pt-10">
             {tabItems.map((tab) => (
-              <Link href={tab.href}>
+              <Link key={tab.value} href={tab.href}>
                 <TabsTrigger
                   key={tab.value}
                   value={tab.value}
