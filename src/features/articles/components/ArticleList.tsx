@@ -3,6 +3,7 @@ import { ArticleCard } from '@/features/articles/components/ArticleCard';
 interface ArticleListProps {
   articles: {
     id: string;
+    slug: string;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
@@ -16,6 +17,7 @@ interface ArticleListProps {
     };
     category: {
       id: string;
+      slug: string;
       createdAt: string;
       updatedAt: string;
       publishedAt: string;
