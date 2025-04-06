@@ -4,6 +4,7 @@ import Link from 'next/link';
 interface ArticleCardProps {
   article: {
     id: string;
+    slug: string;
     createdAt: string;
     updatedAt: string;
     publishedAt: string;
@@ -17,6 +18,7 @@ interface ArticleCardProps {
     };
     category: {
       id: string;
+      slug: string;
       createdAt: string;
       updatedAt: string;
       publishedAt: string;
@@ -29,7 +31,7 @@ interface ArticleCardProps {
 export const ArticleCard = (props: ArticleCardProps) => {
   return (
     <article className="overflow-hidden rounded-lg shadow-lg transition-shadow duration-500 hover:shadow-2xl">
-      <Link href={`/${props.article.category.id}/${props.article.id}`}>
+      <Link href={`/${props.article.category.id}/${props.article.slug}`}>
         <Image
           alt=""
           src={props.article.eyecatch.url}
