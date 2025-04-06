@@ -10,7 +10,7 @@ export const Header = () => {
     { value: 'all', label: 'All', href: '/' },
     { value: 'design', label: 'Design', href: '/design' },
     { value: 'technology', label: 'Technology', href: '/technology' },
-    { value: 'travel', label: 'Travel', href: '/travel' },
+    { value: 'frontend', label: 'Frontend', href: '/frontend' },
   ];
 
   // 現在アクティブにすべきタブの値を決定
