@@ -11,13 +11,25 @@ export const getArticles = async () => {
   }
 };
 
-export const getArticle = async (id: string) => {
+export const getArticlesWithCategory = async (slug: string) => {
+  try {
+    const res = await client.get({
+      endpoint: 'articles',
+      queries: { filters: `category[equals]${slug}` },
+    });
+    return res.contents;
+  } catch (e) {
+    console.error(e);
+  }
+};
+
+export const getArticle = async (slug: string) => {
   try {
     const res = await client.get({
       endpoint: `articles`,
-      contentId: id,
+      queries: { filters: `slug[equals]${slug}`, limit: 1 },
     });
-    return res;
+    return res.contents[0];
   } catch (e) {
     console.error(e);
   }
