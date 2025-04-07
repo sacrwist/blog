@@ -1,30 +1,8 @@
 import { ArticleCard } from '@/features/articles/components/ArticleCard';
+import { Article } from '@/features/articles/types/Article';
 
 interface ArticleListProps {
-  articles: {
-    id: string;
-    slug: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    revisedAt: string;
-    title: string;
-    content: string;
-    eyecatch: {
-      url: string;
-      height: number;
-      width: number;
-    };
-    category: {
-      id: string;
-      slug: string;
-      createdAt: string;
-      updatedAt: string;
-      publishedAt: string;
-      revisedAt: string;
-      name: string;
-    };
-  }[];
+  articles: Article[];
 }
 
 export const ArticleList = (props: ArticleListProps) => {

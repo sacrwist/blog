@@ -1,31 +1,9 @@
+import { Article } from '@/features/articles/types/Article';
 import Image from 'next/image';
 import Link from 'next/link';
 
 interface ArticleCardProps {
-  article: {
-    id: string;
-    slug: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    revisedAt: string;
-    title: string;
-    content: string;
-    eyecatch: {
-      url: string;
-      height: number;
-      width: number;
-    };
-    category: {
-      id: string;
-      slug: string;
-      createdAt: string;
-      updatedAt: string;
-      publishedAt: string;
-      revisedAt: string;
-      name: string;
-    };
-  };
+  article: Article;
 }
 
 export const ArticleCard = (props: ArticleCardProps) => {
