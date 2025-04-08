@@ -34,3 +34,14 @@ export const getArticle = async (slug: string) => {
     console.error(e);
   }
 };
+
+export const getCategories = async () => {
+  try {
+    const res = await client.get({
+      endpoint: 'categories',
+    });
+    return res.contents;
+  } catch (e) {
+    console.error(e);
+  }
+};
