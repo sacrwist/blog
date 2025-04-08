@@ -1,3 +1,4 @@
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 import { Article } from '@/features/articles/types/Article';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,13 +11,15 @@ export const ArticleCard = (props: ArticleCardProps) => {
   return (
     <article className="overflow-hidden rounded-lg shadow-lg transition-shadow duration-500 hover:shadow-2xl">
       <Link href={`/${props.article.category.id}/${props.article.slug}`}>
-        <Image
-          alt=""
-          src={props.article.eyecatch.url}
-          className="h-56 w-full object-cover md:h-72"
-          width={props.article.eyecatch.width}
-          height={props.article.eyecatch.height}
-        />
+        <AspectRatio ratio={16 / 9}>
+          <Image
+            fill
+            alt=""
+            src={props.article.eyecatch.url}
+            className="w-full object-cover"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw"
+          />
+        </AspectRatio>
 
         <div className="bg-white p-4 sm:p-6">
           <time
