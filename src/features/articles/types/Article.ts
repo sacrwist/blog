@@ -7,7 +7,7 @@ export interface Article {
   revisedAt: string;
   title: string;
   content: string;
-  eyecatch: {
+  eyecatch?: {
     url: string;
     height: number;
     width: number;
