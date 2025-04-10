@@ -41,12 +41,12 @@ export default function Contact() {
           >
             <FormField
               control={form.control}
-              name="email"
+              name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email Address</FormLabel>
+                  <FormLabel>名前</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your email address" {...field} />
+                    <Input placeholder="名前" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -55,15 +55,14 @@ export default function Contact() {
 
             <FormField
               control={form.control}
-              name="phone"
+              name="メールアドレス"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
+                  <FormLabel>メールアドレス</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your phone number" {...field} />
+                    <Input placeholder="Enter your email address" {...field} />
                   </FormControl>
-                  <FormMessage />{' '}
-                  {/* スキーマで任意なので通常はエラーは出ない */}
+                  <FormMessage />
                 </FormItem>
               )}
             />
