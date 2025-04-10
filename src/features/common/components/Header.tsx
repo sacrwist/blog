@@ -1,21 +1,11 @@
-'use client';
 import { Button } from '@/components/ui/button';
+import { getCategories } from '@/features/articles/api/common';
 import { CategoryTabs } from '@/features/common/components/CategoryTabs';
 import Link from 'next/link';
 
-interface HeaderProps {
-  categories: {
-    id: string;
-    createdAt: string;
-    updatedAt: string;
-    publishedAt: string;
-    revisedAt: string;
-    name: string;
-    slug: string;
-  }[];
-}
+export const Header = async () => {
+  const categories = await getCategories();
 
-export const Header = (props: HeaderProps) => {
   return (
     <header className="sticky top-0 z-50 bg-white pb-8 pt-10 shadow-lg">
       <div className="mx-auto max-w-7xl">
@@ -34,7 +24,7 @@ export const Header = (props: HeaderProps) => {
             </Link>
           </div>
         </div>
-        <CategoryTabs categories={props.categories} />
+        <CategoryTabs categories={categories} />
       </div>
     </header>
   );
