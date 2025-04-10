@@ -12,6 +12,10 @@ export default async function ArticleDetail({
 }) {
   const article = await getArticle(params.articleName);
 
+  if (!article) {
+    return null;
+  }
+
   return (
     <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
       <h1 className="mb-4 text-3xl font-extrabold leading-tight text-gray-700 sm:text-4xl lg:text-5xl">
